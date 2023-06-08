@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Grafkox | Submit">
+            <meta property="og:description" content="Ich hab keine Ahnung was ich hier rein machen soll also drück einfach auf den Link!">
+            <meta property="og:image" content="assets\Logo.png">
+            <meta name="description" content="Ein kleiner Test wie HTML und CSS zusammenarbeiten können."> 
+        <link rel="stylesheet" href="style.css">
+        <title>Grafkox | Submit</title>
+        <link rel="shortcut icon" href="/assets\favicon.ico" type="image/x-icon">
+        <script>
+            function PlaySound(soundobj) {
+                var thissound=document.getElementById(soundobj);
+                thissound.play();
+                thissound.volume = 0.2;
+                thissound.loop = true;
+            }
+        </script>
+    </head>
+    <body>
+    <link rel="stylesheet" href="feedback.css" />
+        <div class="feedback">
+            <p class="btn" id="soundobj" onmouseover="PlaySound('mySound')" onclick="toggled();">Submit</p>
+            <audio id='mySound' src='https://grafkox.de/submit/pogo-forget.mp3'/>
+            <script>
+                var btn = document.querySelector(".btn");
+                var position;
+
+                btn.addEventListener("mouseover", function () {
+                    position ? (position = 0) : (position = 150);
+                    btn.style.transform = `translate(${position}px, 0px)`
+                    btn.style.transition = "all 0.3s ease";
+                });
+            </script>
+        </div>
+        <div class="trailer">
+            <video src="ahahah.mp4" controls="false"></video>
+        </div>
+        <script type="text/javascript">
+            function toggled(){
+                var trailer= document.querySelector(".trailer")
+                trailer.classList.toggle("active")
+                var mySound = document.getElementById("mySound");
+                mySound.pause();
+                var trailer = document.querySelector("video");
+                trailer.play();
+            }
+        </script>
+    </body>
+</html>
